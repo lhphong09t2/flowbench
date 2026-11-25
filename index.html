@@ -571,6 +571,144 @@
     }
     .footer-links a:hover { color: var(--text); text-decoration: underline; }
 
+
+    /* Upgraded Dual-Player Flagship + Narrated Walkthrough Showcase */
+    .flagship-shell {
+      margin: 26px auto 22px;
+      background: var(--surface);
+      border: 1.5px solid var(--accent-border);
+      border-radius: 22px;
+      padding: 16px;
+      box-shadow: var(--shadow-lg);
+      text-align: left;
+    }
+    .flagship-controls-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 4px 6px 14px;
+      flex-wrap: wrap;
+    }
+    .flagship-title-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      font-size: 13.5px;
+      color: var(--muted);
+    }
+    .fps-badge {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 11.5px;
+      font-weight: 800;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: var(--accent-wash);
+      color: var(--accent);
+      border: 1px solid var(--accent-border);
+    }
+    .player-toggles {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .sound-toggle-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 16px;
+      border-radius: 999px;
+      font-size: 13.5px;
+      font-weight: 800;
+      border: 1.5px solid var(--accent);
+      background: var(--accent);
+      color: var(--accent-ink);
+      cursor: pointer;
+      box-shadow: 0 6px 18px rgba(217, 67, 34, 0.25);
+      transition: transform 0.14s ease, background 0.14s ease;
+    }
+    .sound-toggle-btn:hover {
+      transform: translateY(-1px);
+      background: var(--accent-hover);
+    }
+    .sound-toggle-btn.unmuted {
+      background: var(--ok-bg);
+      color: var(--ok-ink);
+      border-color: var(--ok-border);
+      box-shadow: none;
+    }
+    .aspect-group {
+      display: inline-flex;
+      padding: 3px;
+      border-radius: 10px;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      gap: 3px;
+    }
+    .aspect-btn {
+      padding: 6px 11px;
+      border-radius: 7px;
+      border: 0;
+      background: transparent;
+      color: var(--muted);
+      font-size: 12.5px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .aspect-btn.active {
+      background: var(--surface);
+      color: var(--text);
+      box-shadow: var(--shadow-sm);
+    }
+    .flagship-stage {
+      position: relative;
+      width: 100%;
+      background: #0E0E0D;
+      border-radius: 14px;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .flagship-stage video {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9;
+      display: block;
+      background: #0E0E0D;
+    }
+    .flagship-stage.vertical-mode {
+      padding: 18px 0;
+      background: #0E0E0D;
+    }
+    .flagship-stage.vertical-mode video {
+      width: min(100%, 380px);
+      aspect-ratio: 9 / 16;
+      border-radius: 14px;
+      border: 1px solid rgba(250, 248, 244, 0.14);
+    }
+    .motion-note {
+      font-size: 12.5px;
+      color: var(--subtle);
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+      padding: 0 4px;
+    }
+    .walkthrough-shell {
+      margin: 0 auto 52px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 14px;
+      box-shadow: var(--shadow-sm);
+      text-align: left;
+    }
+
     @media (max-width: 860px) {
       .pricing-grid, .steps-grid, .intake-grid {
         grid-template-columns: 1fr;
@@ -619,15 +757,58 @@
       </div>
       <div class="hero-trust">Fixed transparent scope &middot; 2 revision rounds included &middot; Shipped by builders of Chrome Web Store tools</div>
 
-      <div id="showreel" class="player-wrap">
+      <!-- Primary Hero Film: 32s 60fps Launch Film + 120 BPM Studio Score -->
+      <div id="showreel" class="flagship-shell">
+        <div class="flagship-controls-row">
+          <div class="flagship-title-group">
+            <span class="player-dots">
+              <i style="background:#EF4444"></i>
+              <i style="background:#F59E0B"></i>
+              <i style="background:#10B981"></i>
+            </span>
+            <strong style="color:var(--text);">32s Flagship Launch Film &mdash; Clipwell &amp; SessionMD</strong>
+            <span class="fps-badge">1080p60 &middot; 120 BPM</span>
+          </div>
+          <div class="player-toggles">
+            <div class="aspect-group" role="group" aria-label="Video aspect ratio">
+              <button id="btn-aspect-16x9" class="aspect-btn active" type="button" aria-pressed="true">16:9 Desktop</button>
+              <button id="btn-aspect-9x16" class="aspect-btn" type="button" aria-pressed="false">9:16 Vertical</button>
+            </div>
+            <button id="btn-studio-sound" class="sound-toggle-btn" type="button" aria-pressed="false">
+              &#128266; Enable Studio Sound
+            </button>
+          </div>
+        </div>
+        <div id="flagship-stage" class="flagship-stage">
+          <video
+            id="flagship-player"
+            muted
+            loop
+            controls
+            playsinline
+            preload="metadata"
+            poster="./flagship-poster-16x9.jpg"
+          >
+            <source id="flagship-source" src="./flagship-60fps.mp4" type="video/mp4" />
+            Your browser does not support HTML5 video.
+          </video>
+        </div>
+        <div class="motion-note">
+          <span id="reduced-motion-status">Muted feed-ready autoplay &middot; Click &ldquo;Enable Studio Sound&rdquo; for the 120 BPM Rhodes &amp; UI foley mix.</span>
+          <span>Pure 60fps HTML/CSS/SVG vector DOM choreography</span>
+        </div>
+      </div>
+
+      <!-- Secondary Proof Asset: 48s Narrated Product Walkthrough -->
+      <div id="walkthrough" class="walkthrough-shell">
         <div class="player-bar">
           <span class="player-dots">
             <i style="background:#EF4444"></i>
             <i style="background:#F59E0B"></i>
             <i style="background:#10B981"></i>
-            <strong style="margin-left:6px;color:var(--text);">48s Flagship Showreel &mdash; In-House Products by FlowBench Lab</strong>
+            <strong style="margin-left:6px;color:var(--text);">48s Narrated Product Walkthrough</strong>
           </span>
-          <span>1920&times;1080 &middot; Live Clipwell &amp; SessionMD Chrome Popups &middot; CC</span>
+          <span>1920&times;1080 &middot; Studio Voiceover + Live Chrome Popups &middot; CC</span>
         </div>
         <video
           id="showreel-player"
@@ -899,6 +1080,74 @@
         const dest = ["lhphong09t2", "gmail.com"].join("@");
         window.location.href = "mailto:" + dest + "?subject=" + subject + "&body=" + body;
       });
+
+      // Flagship 60fps Player: prefers-reduced-motion guard, Studio Sound toggle & 16:9 / 9:16 switcher
+      const flagshipVideo = document.getElementById("flagship-player");
+      const flagshipStage = document.getElementById("flagship-stage");
+      const soundBtn = document.getElementById("btn-studio-sound");
+      const btn16 = document.getElementById("btn-aspect-16x9");
+      const btn9 = document.getElementById("btn-aspect-9x16");
+      const motionStatus = document.getElementById("reduced-motion-status");
+      const reducedMotionQuery = window.matchMedia ? window.matchMedia("(prefers-reduced-motion: reduce)") : null;
+
+      function syncSoundButton() {
+        if (!flagshipVideo || !soundBtn) return;
+        const isUnmuted = !flagshipVideo.muted;
+        soundBtn.classList.toggle("unmuted", isUnmuted);
+        soundBtn.setAttribute("aria-pressed", isUnmuted ? "true" : "false");
+        soundBtn.innerHTML = isUnmuted ? "&#128263; Mute Studio Sound" : "&#128266; Enable Studio Sound";
+      }
+
+      if (flagshipVideo) {
+        if (reducedMotionQuery && reducedMotionQuery.matches) {
+          flagshipVideo.pause();
+          flagshipVideo.removeAttribute("autoplay");
+          if (motionStatus) {
+            motionStatus.textContent = "Autoplay paused (prefers-reduced-motion enabled) — press Play anytime.";
+          }
+        } else {
+          const p = flagshipVideo.play();
+          if (p && typeof p.catch === "function") p.catch(() => {});
+        }
+
+        flagshipVideo.addEventListener("volumechange", syncSoundButton);
+
+        soundBtn?.addEventListener("click", () => {
+          flagshipVideo.muted = !flagshipVideo.muted;
+          if (!flagshipVideo.muted) {
+            flagshipVideo.volume = 1.0;
+            const p = flagshipVideo.play();
+            if (p && typeof p.catch === "function") p.catch(() => {});
+          }
+          syncSoundButton();
+        });
+
+        function switchFlagshipAspect(mode) {
+          const wasMuted = flagshipVideo.muted;
+          const wasPaused = flagshipVideo.paused;
+          const isVert = mode === "9x16";
+          const nextSrc = isVert ? "./flagship-9x16-60fps.mp4" : "./flagship-60fps.mp4";
+          const nextPoster = isVert ? "./flagship-poster-9x16.jpg" : "./flagship-poster-16x9.jpg";
+          flagshipStage?.classList.toggle("vertical-mode", isVert);
+          btn16?.classList.toggle("active", !isVert);
+          btn9?.classList.toggle("active", isVert);
+          btn16?.setAttribute("aria-pressed", !isVert ? "true" : "false");
+          btn9?.setAttribute("aria-pressed", isVert ? "true" : "false");
+          flagshipVideo.setAttribute("poster", nextPoster);
+          flagshipVideo.src = nextSrc;
+          flagshipVideo.muted = wasMuted;
+          flagshipVideo.load();
+          if (!wasPaused || !(reducedMotionQuery && reducedMotionQuery.matches)) {
+            const p = flagshipVideo.play();
+            if (p && typeof p.catch === "function") p.catch(() => {});
+          }
+          syncSoundButton();
+        }
+
+        btn16?.addEventListener("click", () => switchFlagshipAspect("16x9"));
+        btn9?.addEventListener("click", () => switchFlagshipAspect("9x16"));
+      }
+
     })();
   </script>
 </body>
