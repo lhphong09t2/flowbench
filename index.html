@@ -787,9 +787,9 @@
             controls
             playsinline
             preload="metadata"
-            poster="./flagship-poster-16x9.jpg"
+            poster="./flagship-poster-16x9.jpg?v=3"
           >
-            <source id="flagship-source" src="./flagship-60fps.mp4" type="video/mp4" />
+            <source id="flagship-source" src="./flagship-60fps.mp4?v=3" type="video/mp4" />
             Your browser does not support HTML5 video.
           </video>
         </div>
@@ -1083,6 +1083,7 @@
 
       // Flagship 60fps Player: prefers-reduced-motion guard, Studio Sound toggle & 16:9 / 9:16 switcher
       const flagshipVideo = document.getElementById("flagship-player");
+      const flagshipSource = document.getElementById("flagship-source");
       const flagshipStage = document.getElementById("flagship-stage");
       const soundBtn = document.getElementById("btn-studio-sound");
       const btn16 = document.getElementById("btn-aspect-16x9");
@@ -1126,14 +1127,15 @@
           const wasMuted = flagshipVideo.muted;
           const wasPaused = flagshipVideo.paused;
           const isVert = mode === "9x16";
-          const nextSrc = isVert ? "./flagship-9x16-60fps.mp4" : "./flagship-60fps.mp4";
-          const nextPoster = isVert ? "./flagship-poster-9x16.jpg" : "./flagship-poster-16x9.jpg";
+          const nextSrc = isVert ? "./flagship-9x16-60fps.mp4?v=3" : "./flagship-60fps.mp4?v=3";
+          const nextPoster = isVert ? "./flagship-poster-9x16.jpg?v=3" : "./flagship-poster-16x9.jpg?v=3";
           flagshipStage?.classList.toggle("vertical-mode", isVert);
           btn16?.classList.toggle("active", !isVert);
           btn9?.classList.toggle("active", isVert);
           btn16?.setAttribute("aria-pressed", !isVert ? "true" : "false");
           btn9?.setAttribute("aria-pressed", isVert ? "true" : "false");
           flagshipVideo.setAttribute("poster", nextPoster);
+          if (flagshipSource) flagshipSource.setAttribute("src", nextSrc);
           flagshipVideo.src = nextSrc;
           flagshipVideo.muted = wasMuted;
           flagshipVideo.load();
