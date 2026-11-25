@@ -1,0 +1,905 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#FAF8F4" />
+  <title>FlowBench Lab — Async B2B SaaS Product Demo Studio (72h–96h)</title>
+  <meta name="description" content="Crisp 1080p real-UI B2B SaaS product walkthroughs delivered asynchronously in 72h–96h with zero discovery calls. Request a free 15s bespoke hook preview." />
+  <link rel="canonical" href="https://lhphong09t2.github.io/flowbench/" />
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="FlowBench Lab" />
+  <meta property="og:title" content="FlowBench Lab — Async B2B SaaS Product Demo Studio" />
+  <meta property="og:description" content="Turn static SaaS landing pages into high-converting 1080p real-UI product walkthroughs in 72h–96h. Free 15s bespoke hook preview (1 per qualified SaaS team)." />
+  <meta property="og:url" content="https://lhphong09t2.github.io/flowbench/" />
+  <meta property="og:image" content="https://lhphong09t2.github.io/flowbench/poster-1280x720.jpg" />
+  <meta property="og:image:width" content="1280" />
+  <meta property="og:image:height" content="720" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="FlowBench Lab — Async B2B SaaS Product Demo Studio" />
+  <meta name="twitter:description" content="1080p real-UI SaaS walkthroughs shipped asynchronously in 72h–96h. Free 15s bespoke hook preview." />
+  <meta name="twitter:image" content="https://lhphong09t2.github.io/flowbench/poster-1280x720.jpg" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "FlowBench Lab",
+    "url": "https://lhphong09t2.github.io/flowbench/",
+    "image": "https://lhphong09t2.github.io/flowbench/poster-1280x720.jpg",
+    "description": "Async B2B SaaS product demo studio producing 1080p real-interface product walkthroughs and vertical launch cuts in 72 to 96 hours.",
+    "priceRange": "$500 - $1,000",
+    "sameAs": [
+      "https://contra.com/phong_le_w9gsh5dm",
+      "https://www.youtube.com/@FlowBenchLab",
+      "https://www.facebook.com/flowbenchlab"
+    ]
+  }
+  </script>
+
+  <style>
+    :root, [data-theme="light"] {
+      color-scheme: light;
+      --bg: #FAF8F4;
+      --surface: #FFFFFF;
+      --surface-2: #F2EFE8;
+      --header-bg: rgba(250, 248, 244, 0.90);
+      --border: #E5E0D5;
+      --border-strong: #CFC8BA;
+      --text: #18181B;
+      --text-soft: #292524;
+      --muted: #57534E;
+      --subtle: #78716C;
+      --accent: #D94322;
+      --accent-hover: #BC3315;
+      --accent-wash: rgba(217, 67, 34, 0.09);
+      --accent-border: rgba(217, 67, 34, 0.34);
+      --accent-ink: #FFFFFF;
+      --ok-bg: #ECFDF5;
+      --ok-ink: #047857;
+      --ok-border: #6EE7B7;
+      --code-bg: #18181B;
+      --code-ink: #F5F3EE;
+      --shadow-sm: 0 2px 10px rgba(24, 24, 27, 0.05);
+      --shadow-lg: 0 22px 54px rgba(24, 24, 27, 0.11);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        color-scheme: dark;
+        --bg: #141413;
+        --surface: #1E1D1B;
+        --surface-2: #272522;
+        --header-bg: rgba(20, 20, 19, 0.90);
+        --border: #2E2C28;
+        --border-strong: #413E38;
+        --text: #F5F3EE;
+        --text-soft: #E7E5E4;
+        --muted: #A8A29E;
+        --subtle: #78716C;
+        --accent: #F05A39;
+        --accent-hover: #FF785A;
+        --accent-wash: rgba(240, 90, 57, 0.14);
+        --accent-border: rgba(240, 90, 57, 0.42);
+        --accent-ink: #141413;
+        --ok-bg: rgba(16, 185, 129, 0.15);
+        --ok-ink: #6EE7B7;
+        --ok-border: rgba(110, 231, 183, 0.35);
+        --code-bg: #0E0E0D;
+        --code-ink: #F5F3EE;
+        --shadow-sm: 0 2px 12px rgba(0, 0, 0, 0.36);
+        --shadow-lg: 0 26px 64px rgba(0, 0, 0, 0.56);
+      }
+    }
+    [data-theme="dark"] {
+      color-scheme: dark;
+      --bg: #141413;
+      --surface: #1E1D1B;
+      --surface-2: #272522;
+      --header-bg: rgba(20, 20, 19, 0.90);
+      --border: #2E2C28;
+      --border-strong: #413E38;
+      --text: #F5F3EE;
+      --text-soft: #E7E5E4;
+      --muted: #A8A29E;
+      --subtle: #78716C;
+      --accent: #F05A39;
+      --accent-hover: #FF785A;
+      --accent-wash: rgba(240, 90, 57, 0.14);
+      --accent-border: rgba(240, 90, 57, 0.42);
+      --accent-ink: #141413;
+      --ok-bg: rgba(16, 185, 129, 0.15);
+      --ok-ink: #6EE7B7;
+      --ok-border: rgba(110, 231, 183, 0.35);
+      --code-bg: #0E0E0D;
+      --code-ink: #F5F3EE;
+      --shadow-sm: 0 2px 12px rgba(0, 0, 0, 0.36);
+      --shadow-lg: 0 26px 64px rgba(0, 0, 0, 0.56);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 84px;
+      background: var(--bg);
+    }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif;
+      background: radial-gradient(960px 440px at 50% 0%, var(--accent-wash), var(--bg) 72%);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Sticky Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: var(--header-bg);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 12px 0;
+      flex-wrap: wrap;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 17px;
+      letter-spacing: -0.02em;
+    }
+    .brand-pill {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: var(--accent-wash);
+      color: var(--accent);
+      border: 1px solid var(--accent-border);
+    }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .nav-link {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--muted);
+      padding: 6px 10px;
+      border-radius: 8px;
+    }
+    .nav-link:hover { color: var(--text); background: var(--surface-2); }
+    .theme-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 9px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 700;
+      border: 1px solid var(--border-strong);
+      background: var(--surface);
+      color: var(--text);
+      cursor: pointer;
+      transition: transform 0.14s ease, background 0.14s ease, border-color 0.14s ease;
+    }
+    .btn:hover { transform: translateY(-1px); border-color: var(--text); }
+    .btn-primary {
+      background: var(--accent);
+      color: var(--accent-ink);
+      border-color: var(--accent);
+    }
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      border-color: var(--accent-hover);
+    }
+
+    /* Hero */
+    .hero {
+      padding: 56px 0 36px;
+      text-align: center;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: var(--ok-bg);
+      color: var(--ok-ink);
+      border: 1px solid var(--ok-border);
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+    h1 {
+      margin: 0 auto 16px;
+      max-width: 860px;
+      font-size: clamp(32px, 5vw, 54px);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      font-weight: 800;
+    }
+    .hero-sub {
+      margin: 0 auto 26px;
+      max-width: 690px;
+      font-size: clamp(16px, 2.1vw, 19px);
+      color: var(--muted);
+    }
+    .hero-ctas {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+    .hero-trust {
+      font-size: 13px;
+      color: var(--subtle);
+    }
+
+    /* Native 1080p Showreel Showcase */
+    .player-wrap {
+      margin: 26px auto 56px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 14px;
+      box-shadow: var(--shadow-lg);
+    }
+    .player-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 4px 8px 12px;
+      font-size: 13px;
+      color: var(--muted);
+      flex-wrap: wrap;
+    }
+    .player-dots {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .player-dots i {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .video-frame {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #0B1120;
+      border-radius: 12px;
+      overflow: hidden;
+      display: block;
+    }
+    video.video-frame {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Sections */
+    .section {
+      padding: 44px 0;
+      border-top: 1px solid var(--border);
+    }
+    .section-head {
+      max-width: 720px;
+      margin-bottom: 28px;
+    }
+    .section-kicker {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+    .section-head h2 {
+      margin: 0 0 8px;
+      font-size: clamp(24px, 3.4vw, 34px);
+      letter-spacing: -0.025em;
+      line-height: 1.18;
+    }
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    /* Scope Cards */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+    .price-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      position: relative;
+    }
+    .price-card.featured {
+      border: 2px solid var(--accent);
+    }
+    .popular-tag {
+      align-self: flex-start;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--accent-wash);
+      color: var(--accent);
+      border: 1px solid var(--accent-border);
+    }
+    .tier-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .tier-head h3 {
+      margin: 0;
+      font-size: 22px;
+      letter-spacing: -0.02em;
+    }
+    .price-num {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 34px;
+      font-weight: 800;
+      color: var(--text);
+    }
+    .sla-line {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--muted);
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .spec-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 14.5px;
+      color: var(--text-soft);
+      flex: 1;
+    }
+    .spec-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+    }
+    .spec-list li::before {
+      content: "✓";
+      font-weight: 800;
+      color: var(--ok-ink);
+      flex-shrink: 0;
+    }
+    .card-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    /* Free 15s Hook Banner */
+    .hook-banner {
+      margin-top: 24px;
+      background: var(--surface-2);
+      border: 1px solid var(--border-strong);
+      border-radius: 16px;
+      padding: 22px 26px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+    .hook-banner strong {
+      display: block;
+      font-size: 17px;
+      margin-bottom: 3px;
+    }
+    .hook-banner span {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    /* Process + In-House Products */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .step-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px;
+    }
+    .step-num {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .step-card h3 {
+      margin: 0 0 6px;
+      font-size: 17px;
+    }
+    .step-card p {
+      margin: 0;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    /* Async Intake Builder */
+    .intake-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 24px;
+      align-items: start;
+    }
+    .form-card, .preview-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+    .field {
+      margin-bottom: 14px;
+    }
+    .field label {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: var(--text-soft);
+    }
+    .field input, .field select, .field textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid var(--border-strong);
+      background: var(--bg);
+      color: var(--text);
+      font-family: inherit;
+      font-size: 14px;
+    }
+    .field textarea {
+      min-height: 82px;
+      resize: vertical;
+    }
+    .brief-pre {
+      background: var(--code-bg);
+      color: var(--code-ink);
+      border-radius: 12px;
+      padding: 16px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 12.5px;
+      line-height: 1.55;
+      white-space: pre-wrap;
+      word-break: break-word;
+      margin: 0 0 14px;
+      border: 1px solid var(--border-strong);
+    }
+    .intake-btns {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .copy-feedback {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ok-ink);
+      min-height: 20px;
+      margin-top: 8px;
+    }
+
+    .site-footer {
+      margin-top: 48px;
+      border-top: 1px solid var(--border);
+      padding: 28px 0 40px;
+      font-size: 13.5px;
+      color: var(--muted);
+    }
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .footer-links a:hover { color: var(--text); text-decoration: underline; }
+
+    @media (max-width: 860px) {
+      .pricing-grid, .steps-grid, .intake-grid {
+        grid-template-columns: 1fr;
+      }
+      .nav-hide-sm { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="brand">
+        <svg viewBox="0 0 256 256" width="28" height="28" fill="none" aria-hidden="true">
+          <rect width="256" height="256" rx="58" fill="#18181B"/>
+          <rect x="2" y="2" width="252" height="252" rx="56" stroke="#FAF8F4" stroke-opacity="0.24" stroke-width="4"/>
+          <g transform="translate(128 128) scale(0.25) translate(-524 -512)">
+            <path d="M 212 392 A 194 194 0 0 1 406 198 L 824 198 Q 836 198 836 210 L 836 324 Q 836 336 824 336 L 406 336 A 56 56 0 0 0 350 392 L 350 814 Q 350 826 338 826 L 224 826 Q 212 826 212 814 Z" fill="#FAF8F4"/>
+            <path d="M 406 478 Q 406 468 416 468 L 744 468 Q 757 468 748 477 L 632 593 Q 629 596 621 596 L 416 596 Q 406 596 406 586 Z" fill="#EC5531"/>
+          </g>
+        </svg>
+        <span>FlowBench Lab</span>
+        <span class="brand-pill">DEMO STUDIO</span>
+      </a>
+      <nav class="nav-actions" aria-label="Primary navigation">
+        <a class="nav-link nav-hide-sm" href="#showreel">Showreel</a>
+        <a class="nav-link nav-hide-sm" href="#pricing">Scope &amp; Pricing</a>
+        <a class="nav-link nav-hide-sm" href="#process">Async Process</a>
+        <button id="theme-toggle" class="theme-btn" type="button" aria-label="Toggle Daylight / Studio Dark theme" title="Switch Daylight / Dark">
+          <span id="theme-glyph" aria-hidden="true">&#9788;</span>
+        </button>
+        <a class="btn btn-primary" href="#brief">Free 15s Hook Preview</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="eyebrow">Free 15s bespoke hook preview (1 per qualified SaaS team)</div>
+      <h1>Real-UI B2B SaaS Product Demos Shipped Async in 72h&ndash;96h.</h1>
+      <p class="hero-sub">
+        We record your live product interface in crisp 1080p&mdash;never slide decks or mockups&mdash;and deliver ready-to-embed homepage, Product Hunt, and X/LinkedIn launch cuts with zero discovery calls.
+      </p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="#brief" data-select-tier="Free 15s Hook Preview">Request Free 15s Hook Preview</a>
+        <a class="btn" href="https://contra.com/phong_le_w9gsh5dm" target="_blank" rel="noopener noreferrer">View Services on Contra &rarr;</a>
+      </div>
+      <div class="hero-trust">Fixed transparent scope &middot; 2 revision rounds included &middot; Shipped by builders of Chrome Web Store tools</div>
+
+      <div id="showreel" class="player-wrap">
+        <div class="player-bar">
+          <span class="player-dots">
+            <i style="background:#EF4444"></i>
+            <i style="background:#F59E0B"></i>
+            <i style="background:#10B981"></i>
+            <strong style="margin-left:6px;color:var(--text);">48s Flagship Showreel &mdash; In-House Products by FlowBench Lab</strong>
+          </span>
+          <span>1920&times;1080 &middot; Live Clipwell &amp; SessionMD Chrome Popups &middot; CC</span>
+        </div>
+        <video
+          id="showreel-player"
+          class="video-frame"
+          controls
+          playsinline
+          preload="metadata"
+          poster="./poster-1280x720.jpg"
+        >
+          <source src="./showreel-1080p.mp4" type="video/mp4" />
+          <track kind="captions" src="./captions-en.vtt" srclang="en" label="English" default />
+          Your browser does not support HTML5 video.
+        </video>
+      </div>
+    </section>
+
+    <section id="pricing" class="section">
+      <div class="section-head">
+        <div class="section-kicker">Transparent Fixed Scope</div>
+        <h2>Two Productized Sprints. Zero Hourly Surprises.</h2>
+        <p>Every sprint includes a T+24h storyboard &amp; keyframe check before final render plus 2 structured revision rounds.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <article class="price-card">
+          <span class="popular-tag">Fastest Ship &middot; 72h SLA</span>
+          <div class="tier-head">
+            <h3>Launch Walkthrough (75s)</h3>
+            <span class="price-num">$500</span>
+          </div>
+          <div class="sla-line">72-hour async turnaround &middot; Ideal for single-feature launches &amp; hero embeds</div>
+          <ul class="spec-list">
+            <li>60&ndash;75s crisp 1920&times;1080 (16:9) live browser UI product walkthrough</li>
+            <li>1 vertical 9:16 social cut formatted for X, LinkedIn, or Reels</li>
+            <li>Clean studio narration, synced WebVTT/SRT captions &amp; 1280&times;720 poster</li>
+            <li>Clean caption-free master + burned-caption social feed master</li>
+            <li>2 structured revision rounds included</li>
+          </ul>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="https://contra.com/s/kLobPXLF-75s-saa-s-launch-walkthrough-916-social-cut-72h-async" target="_blank" rel="noopener noreferrer">Book $500 Launch Sprint on Contra &rarr;</a>
+            <a class="btn" href="#brief" data-select-tier="$500 Launch Walkthrough (75s · 72h)">Start With Free 15s Hook First</a>
+          </div>
+        </article>
+
+        <article class="price-card featured">
+          <span class="popular-tag">Most Popular &middot; Product Hunt &amp; YC Launches</span>
+          <div class="tier-head">
+            <h3>Growth Walkthrough (90&ndash;120s)</h3>
+            <span class="price-num">$1,000</span>
+          </div>
+          <div class="sla-line">96-hour async turnaround &middot; Full homepage conversion + multi-channel launch kit</div>
+          <ul class="spec-list">
+            <li>90&ndash;120s flagship 1920&times;1080 (16:9) multi-step real-UI product walkthrough</li>
+            <li>2 distinct 9:16 vertical hook cuts tailored for X, LinkedIn &amp; YouTube Shorts</li>
+            <li>Clean studio narration, WebVTT/SRT captions &amp; custom Result-First poster</li>
+            <li>Clean homepage master + burned-caption social master + HTML5 embed guide</li>
+            <li>2 structured revision rounds included (T+24h script lock + final polish)</li>
+          </ul>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="https://contra.com/s/LQA3AkQE-90-120s-growth-saa-s-demo-2-social-cuts-96h-async" target="_blank" rel="noopener noreferrer">Book $1,000 Growth Sprint on Contra &rarr;</a>
+            <a class="btn" href="#brief" data-select-tier="$1,000 Growth Walkthrough (90–120s · 96h)">Start With Free 15s Hook First</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="hook-banner">
+        <div>
+          <strong>Free 15s bespoke hook preview (1 per qualified SaaS team)</strong>
+          <span>Share your live app or sandbox URL below. We capture a 15-second opening hook of your core workflow before you commit to a full sprint.</span>
+        </div>
+        <a class="btn btn-primary" href="#brief" data-select-tier="Free 15s Hook Preview">Claim Free 15s Preview &darr;</a>
+      </div>
+    </section>
+
+    <section id="process" class="section">
+      <div class="section-head">
+        <div class="section-kicker">Zero-Meeting Workflow</div>
+        <h2>How Async Delivery Works</h2>
+        <p>Built by software engineers who ship production extensions (<a href="https://lhphong09t2.github.io/clipwell/" target="_blank" rel="noopener" style="text-decoration:underline">Clipwell</a> &amp; <a href="https://lhphong09t2.github.io/sessionmd/" target="_blank" rel="noopener" style="text-decoration:underline">SessionMD</a>)&mdash;we understand complex technical workflows without hand-holding.</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">STEP 01 &middot; 2 MIN ASYNC BRIEF</div>
+          <h3>Share URL &amp; Core &ldquo;Aha&rdquo;</h3>
+          <p>Send your public app, staging sandbox, or a raw 2-minute click-through Loom plus the single outcome buyers must see in the first 5 seconds.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">STEP 02 &middot; T+24H HOOK &amp; SCRIPT LOCK</div>
+          <h3>Approve Script &amp; Keyframes</h3>
+          <p>Review the concise word-for-word script and 3 real UI keyframes (or your free 15s hook preview) asynchronously before full production.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">STEP 03 &middot; 72H&ndash;96H DELIVERY</div>
+          <h3>Embed-Ready MP4 + Captions</h3>
+          <p>Receive clean 1080p 16:9 masters, vertical 9:16 social cuts, WebVTT/SRT captions, poster thumbnail, and 2 revision rounds.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="brief" class="section">
+      <div class="section-head">
+        <div class="section-kicker">2-Minute Async Intake</div>
+        <h2>Generate Your Project Brief or Free 15s Hook Request</h2>
+        <p>Fill out 4 quick fields, then copy your formatted brief in 1 click to message on Contra or open directly in your email client.</p>
+      </div>
+
+      <div class="intake-grid">
+        <form id="brief-form" class="form-card" onsubmit="return false;">
+          <div class="field">
+            <label for="f-url">Product / Landing Page URL</label>
+            <input id="f-url" type="url" placeholder="https://yourproduct.com" value="" />
+          </div>
+          <div class="field">
+            <label for="f-tier">Selected Option</label>
+            <select id="f-tier">
+              <option value="Free 15s Hook Preview (1 per qualified SaaS team)">Free 15s Hook Preview (1 per qualified SaaS team)</option>
+              <option value="$500 Launch Walkthrough (75s · 72h · 2 revisions)">$500 Launch Walkthrough (75s &middot; 72h &middot; 2 revisions)</option>
+              <option value="$1,000 Growth Walkthrough (90–120s · 96h · 2 revisions)">$1,000 Growth Walkthrough (90&ndash;120s &middot; 96h &middot; 2 revisions)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-placement">Primary Launch Surface</label>
+            <select id="f-placement">
+              <option value="Homepage Hero + Product Hunt / X Launch">Homepage Hero + Product Hunt / X Launch</option>
+              <option value="Homepage Above-the-Fold Walkthrough">Homepage Above-the-Fold Walkthrough</option>
+              <option value="Docs, Changelog & Customer Onboarding">Docs, Changelog &amp; Customer Onboarding</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-aha">Single Core &ldquo;Aha&rdquo; Workflow (1&ndash;2 sentences)</label>
+            <textarea id="f-aha" placeholder="e.g. Connect a GitHub repo -> trigger automated PR review -> export clean compliance report in 1 click."></textarea>
+          </div>
+          <div class="field" style="margin-bottom:0">
+            <label for="f-access">Demo Access Mode</label>
+            <select id="f-access">
+              <option value="Public live product / interactive sandbox">Public live product / interactive sandbox</option>
+              <option value="Read-only staging account (shared after confirmation)">Read-only staging account (shared after confirmation)</option>
+              <option value="2-minute raw founder Loom + live UI">2-minute raw founder Loom + live UI</option>
+            </select>
+          </div>
+        </form>
+
+        <div class="preview-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+            <strong style="font-size:14px;">Ready-to-Send Async Brief</strong>
+            <span style="font-size:12px;color:var(--subtle);">Updates live</span>
+          </div>
+          <pre id="brief-output" class="brief-pre"></pre>
+          <div class="intake-btns">
+            <button id="btn-copy-brief" class="btn btn-primary" type="button">Copy Async Brief</button>
+            <a class="btn" href="https://contra.com/phong_le_w9gsh5dm" target="_blank" rel="noopener noreferrer">Send via Contra &rarr;</a>
+            <button id="btn-mailto-brief" class="btn" type="button">Open in Email App</button>
+          </div>
+          <div id="copy-feedback" class="copy-feedback" role="status" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>&copy; 2026 FlowBench Lab &middot; Async B2B SaaS Product Demo Studio</div>
+      <div class="footer-links">
+        <a href="https://contra.com/phong_le_w9gsh5dm" target="_blank" rel="noopener noreferrer">Contra Storefront</a>
+        <a href="https://lhphong09t2.github.io/clipwell/" target="_blank" rel="noopener noreferrer">Clipwell Extension</a>
+        <a href="https://lhphong09t2.github.io/sessionmd/" target="_blank" rel="noopener noreferrer">SessionMD Extension</a>
+        <a href="https://www.youtube.com/@FlowBenchLab" target="_blank" rel="noopener noreferrer">YouTube</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const STORAGE_KEY = "flowbench_studio_theme";
+      const docEl = document.documentElement;
+      const themeBtn = document.getElementById("theme-toggle");
+      const glyph = document.getElementById("theme-glyph");
+
+      function isDarkEffective() {
+        const attr = docEl.getAttribute("data-theme");
+        if (attr === "dark") return true;
+        if (attr === "light") return false;
+        return Boolean(window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches);
+      }
+      function setTheme(mode) {
+        docEl.setAttribute("data-theme", mode);
+        try { localStorage.setItem(STORAGE_KEY, mode); } catch (_) {}
+        if (glyph) glyph.textContent = mode === "dark" ? "☀" : "☾";
+      }
+      try {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        if (saved === "dark" || saved === "light") setTheme(saved);
+        else if (glyph) glyph.textContent = isDarkEffective() ? "☀" : "☾";
+      } catch (_) {}
+
+      themeBtn?.addEventListener("click", () => {
+        setTheme(isDarkEffective() ? "light" : "dark");
+      });
+
+      const urlEl = document.getElementById("f-url");
+      const tierEl = document.getElementById("f-tier");
+      const placeEl = document.getElementById("f-placement");
+      const ahaEl = document.getElementById("f-aha");
+      const accessEl = document.getElementById("f-access");
+      const outEl = document.getElementById("brief-output");
+      const feedbackEl = document.getElementById("copy-feedback");
+
+      function buildBriefText() {
+        const url = (urlEl.value || "").trim() || "[https://yourproduct.com]";
+        const tier = tierEl.value;
+        const place = placeEl.value;
+        const aha = (ahaEl.value || "").trim() || "[Core 3-step workflow to highlight in the first 15 seconds]";
+        const access = accessEl.value;
+        return [
+          "FlowBench Lab — Async SaaS Demo Brief",
+          "--------------------------------------",
+          "Product URL: " + url,
+          "Request: " + tier,
+          "Primary Surface: " + place,
+          "Core Aha Workflow: " + aha,
+          "Demo Access: " + access
+        ].join("\n");
+      }
+
+      function refreshBrief() {
+        outEl.textContent = buildBriefText();
+      }
+      [urlEl, tierEl, placeEl, ahaEl, accessEl].forEach((el) => {
+        el?.addEventListener("input", refreshBrief);
+        el?.addEventListener("change", refreshBrief);
+      });
+      refreshBrief();
+
+      document.querySelectorAll("[data-select-tier]").forEach((link) => {
+        link.addEventListener("click", () => {
+          const hint = link.getAttribute("data-select-tier") || "";
+          for (const opt of tierEl.options) {
+            if (opt.value.includes(hint.slice(0, 12))) {
+              tierEl.value = opt.value;
+              refreshBrief();
+              break;
+            }
+          }
+        });
+      });
+
+      document.getElementById("btn-copy-brief")?.addEventListener("click", async () => {
+        const text = buildBriefText();
+        let ok = false;
+        try {
+          await navigator.clipboard.writeText(text);
+          ok = true;
+        } catch (_) {
+          const ta = document.createElement("textarea");
+          ta.value = text;
+          document.body.appendChild(ta);
+          ta.select();
+          ok = Boolean(document.execCommand("copy"));
+          ta.remove();
+        }
+        feedbackEl.textContent = ok
+          ? "✓ Copied brief to clipboard — paste directly on Contra or in your email."
+          : "Select the brief text above and press Cmd/Ctrl+C.";
+      });
+
+      document.getElementById("btn-mailto-brief")?.addEventListener("click", () => {
+        const subject = encodeURIComponent("FlowBench Lab — " + tierEl.value.split("(")[0].trim());
+        const body = encodeURIComponent(buildBriefText());
+        const dest = ["lhphong09t2", "gmail.com"].join("@");
+        window.location.href = "mailto:" + dest + "?subject=" + subject + "&body=" + body;
+      });
+    })();
+  </script>
+</body>
+</html>
