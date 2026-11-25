@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <meta name="googlebot" content="noindex,nofollow,noarchive" />
+  <title>15s Homepage Concept Preview (Flowripple) — FlowBench Lab</title>
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml" />
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0E0E0D;
+      --surface: #171614;
+      --surface-2: #211F1C;
+      --border: #2E2C28;
+      --text: #FAF8F4;
+      --muted: #A8A29E;
+      --accent: #818CF8;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 28px 20px 56px;
+    }
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 16px;
+    }
+    .pill {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      color: var(--muted);
+    }
+    .hero-head {
+      margin: 28px 0 20px;
+    }
+    .kicker {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(26px, 4vw, 40px);
+      line-height: 1.12;
+      letter-spacing: -0.028em;
+    }
+    .sub {
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 780px;
+    }
+    .player-card {
+      margin-top: 22px;
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      border-radius: 20px;
+      padding: 16px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+    }
+    .player-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 2px 6px 14px;
+      flex-wrap: wrap;
+    }
+    .player-meta {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 12.5px;
+      color: var(--muted);
+    }
+    .sound-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 18px;
+      border-radius: 999px;
+      border: 1.5px solid var(--accent);
+      background: var(--accent);
+      color: #0E0E0D;
+      font-size: 13.5px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+    .sound-btn.active {
+      background: transparent;
+      color: var(--accent);
+    }
+    video {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 12px;
+      background: #000;
+      display: block;
+    }
+    .actions-row {
+      margin-top: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .btn-group {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 18px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 700;
+      border: 1px solid var(--border);
+      background: var(--surface-2);
+      color: var(--text);
+      cursor: pointer;
+    }
+    .btn-primary {
+      background: var(--text);
+      color: #0E0E0D;
+      border-color: var(--text);
+    }
+    .disclosure-card {
+      margin-top: 26px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px 24px;
+      font-size: 13.5px;
+      color: var(--muted);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .disclosure-card strong {
+      color: var(--text);
+    }
+    .takedown-row {
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .link-ul {
+      text-decoration: underline;
+      color: var(--text);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="topbar">
+      <a href="../../" class="brand">
+        <svg viewBox="0 0 256 256" width="28" height="28" fill="none" aria-hidden="true">
+          <rect width="256" height="256" rx="58" fill="#22201E" stroke="#383530" stroke-width="4"/>
+          <g transform="translate(128 128) scale(0.25) translate(-524 -512)">
+            <path d="M 212 392 A 194 194 0 0 1 406 198 L 824 198 Q 836 198 836 210 L 836 324 Q 836 336 824 336 L 406 336 A 56 56 0 0 0 350 392 L 350 814 Q 350 826 338 826 L 224 826 Q 212 826 212 814 Z" fill="#FAF8F4"/>
+            <path d="M 406 478 Q 406 468 416 468 L 744 468 Q 757 468 748 477 L 632 593 Q 629 596 621 596 L 416 596 Q 406 596 406 586 Z" fill="#EC5531"/>
+          </g>
+        </svg>
+        <span>FlowBench Lab</span>
+      </a>
+      <span class="pill">UNLISTED CONCEPT PREVIEW &middot; FR-05 &middot; NOINDEX</span>
+    </header>
+
+    <section class="hero-head">
+      <div class="kicker">Independent 15.0s Concept &middot; 1920&times;1080 @ 60fps</div>
+      <h1>15s Homepage Concept for Flowripple</h1>
+      <p class="sub">Animates a single-line SDK event trigger binding User Objects and Order IDs into the visual workflow canvas and full step-by-step execution trace.</p>
+    </section>
+
+    <section class="player-card">
+      <div class="player-bar">
+        <span class="player-meta">15.00s &middot; 900 frames @ 60fps &middot; -14.1 LUFS 120 BPM Studio Score</span>
+        <button id="btn-sound" class="sound-btn" type="button" aria-pressed="false">&#128266; Enable Studio Sound</button>
+      </div>
+      <video id="teaser-video" muted loop controls playsinline preload="metadata" poster="./poster.jpg">
+        <source src="./teaser-1080p60.mp4" type="video/mp4" />
+        Your browser does not support HTML5 video.
+      </video>
+      <div class="actions-row">
+        <div class="btn-group">
+          <a class="btn btn-primary" href="./teaser-1080p60.mp4" download="flowbench-15s-concept-fr05.mp4">&#11015; Download Free 1080p60 MP4</a>
+          <a class="btn" href="../../#pricing">See 48h&ndash;96h Scope &amp; Founding Pricing &rarr;</a>
+        </div>
+        <span id="motion-hint" class="player-meta">Muted autoplay &middot; Toggle sound above</span>
+      </div>
+    </section>
+
+    <section class="disclosure-card" aria-label="Attribution and non-affiliation disclosure">
+      <div>
+        <strong>Independent Non-Affiliation Notice:</strong> This 15-second animation is an unsolicited creative concept produced independently by FlowBench Lab. FlowBench Lab is <strong>not affiliated with, endorsed by, or commissioned by Flowripple</strong>.
+      </div>
+      <div>
+        <strong>Public-Source Attribution (Captured 2026-11-25):</strong> Product headlines and interface strings shown in this illustrative UI animation were adapted solely from publicly accessible copy on <a class="link-ul" href="https://flowripple.com" target="_blank" rel="noopener noreferrer">https://flowripple.com</a> captured on <code>2026-11-25</code>. All Flowripple names and marks remain the property of their respective owners.
+      </div>
+      <div>
+        <strong>Complimentary Use Permission:</strong> FlowBench Lab grants Flowripple non-exclusive, royalty-free permission to download and use FlowBench Lab&rsquo;s original motion-graphics layout in this clip (paired with its non-exclusive 120 BPM studio background score) on Flowripple&rsquo;s own channels, with zero obligation.
+      </div>
+      <div class="takedown-row">
+        <span><strong>Removal on Request:</strong> This page is unlisted (<code>noindex,nofollow</code>). Prefer it removed? Request immediate deletion anytime:</span>
+        <a class="btn" href="mailto:lhphong09t2@gmail.com?subject=Remove%20Unlisted%20Preview%20(FR-05)">Request Immediate Removal (lhphong09t2@gmail.com)</a>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    (function () {
+      const vid = document.getElementById("teaser-video");
+      const btn = document.getElementById("btn-sound");
+      const hint = document.getElementById("motion-hint");
+      const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      function sync() {
+        if (!vid || !btn) return;
+        const on = !vid.muted;
+        btn.classList.toggle("active", on);
+        btn.setAttribute("aria-pressed", on ? "true" : "false");
+        btn.innerHTML = on ? "&#128263; Mute Studio Sound" : "&#128266; Enable Studio Sound";
+      }
+
+      if (vid) {
+        if (reduce) {
+          vid.pause();
+          if (hint) hint.textContent = "Autoplay paused (prefers-reduced-motion)";
+        } else {
+          const p = vid.play();
+          if (p && typeof p.catch === "function") p.catch(() => {});
+        }
+        vid.addEventListener("volumechange", sync);
+        btn?.addEventListener("click", () => {
+          vid.muted = !vid.muted;
+          if (!vid.muted) {
+            vid.volume = 1.0;
+            const p = vid.play();
+            if (p && typeof p.catch === "function") p.catch(() => {});
+          }
+          sync();
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
