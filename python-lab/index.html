@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net 'wasm-unsafe-eval'; worker-src 'self' blob:; connect-src 'self' https://cdn.jsdelivr.net; style-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'self'" />
+  <title>FlowBench Python Web Lab — Zero-Install Python 3.12 Practice</title>
+  <meta name="description" content="Practice every FlowBench Lab Python lesson directly in your browser with real Python 3.12 WebAssembly—zero install, zero sign-up." />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand-group">
+      <a class="brand-pill" href="../">FlowBench Python Lab</a>
+      <label for="lesson-picker" class="lesson-label">Lesson:</label>
+      <select id="lesson-picker" class="lesson-select" aria-label="Select Python course lesson"></select>
+    </div>
+    <div class="topbar-right">
+      <button id="toggle-vscode-btn" class="btn btn-secondary" type="button">Local VS Code Setup (3 Steps)</button>
+      <span id="runtime-status" class="runtime-pill">Initializing Python 3.12...</span>
+    </div>
+  </header>
+
+  <section id="vscode-drawer" class="setup-drawer" aria-label="Local VS Code Setup">
+    <strong>Prefer coding locally on your computer? (Takes 2 minutes):</strong>
+    <ol class="setup-steps">
+      <li>Download <strong>Python 3.12+</strong> from <code>python.org/downloads</code> (on Windows, check <code>Add python.exe to PATH</code>).</li>
+      <li>Install <strong>Visual Studio Code</strong> (<code>code.visualstudio.com</code>) and add the official <strong>Python</strong> extension.</li>
+      <li>Create a folder <code>python-course</code>, save your file as <code>lesson_01.py</code>, and run <code>python3 lesson_01.py</code> in the terminal.</li>
+    </ol>
+  </section>
+
+  <nav class="subbar" aria-label="Lesson stages and execution controls">
+    <div id="stage-tabs" class="stage-tabs"></div>
+    <div class="action-group">
+      <button id="run-btn" class="btn btn-run" type="button">Run Python (Ctrl+Enter)</button>
+      <button id="stop-btn" class="btn btn-stop" type="button">Stop Loop</button>
+      <button id="reset-btn" class="btn btn-secondary" type="button">Reset Starter</button>
+    </div>
+  </nav>
+
+  <main class="workspace">
+    <section class="pane" aria-label="Python Code Editor">
+      <div class="pane-header">
+        <span class="pane-title" id="editor-filename">lesson_01.py</span>
+        <span>Python 3.12 Standard Library</span>
+      </div>
+      <textarea id="code-editor" spellcheck="false" aria-label="Python code editor"></textarea>
+    </section>
+
+    <div class="right-col">
+      <section class="pane" aria-label="Simulated input() lines">
+        <div class="pane-header">
+          <span class="pane-title">Test Inputs (1 line per input() call)</span>
+          <span>stdin</span>
+        </div>
+        <textarea id="stdin-box" spellcheck="false" placeholder="Optional: 1 line per input() call" aria-label="Test input lines"></textarea>
+      </section>
+
+      <section class="pane pane-output" aria-label="Program Output">
+        <div class="pane-header">
+          <span class="pane-title">Terminal Output</span>
+          <span id="exec-timing">0 ms</span>
+        </div>
+        <pre id="output-console">Click "Run Python" to execute this snippet right in your browser.</pre>
+      </section>
+
+      <aside class="guide-card" id="lesson-guide"></aside>
+    </div>
+  </main>
+
+  <script src="./lessons.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
