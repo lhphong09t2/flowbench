@@ -4,23 +4,23 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#FAF8F4" />
-  <title>FlowBench Lab — Async B2B SaaS Launch Films &amp; Demos (48h–96h)</title>
-  <meta name="description" content="Crisp 1080p60 B2B SaaS launch films and real-UI product walkthroughs delivered asynchronously in 48h–96h with zero discovery calls. Founding Client rates from $149." />
+  <title>FlowBench Lab — Async B2B SaaS Launch Films, Extensions &amp; Automation Sprints</title>
+  <meta name="description" content="Crisp 1080p60 B2B SaaS launch films, Chrome/Edge MV3 extensions, Stripe/Polar webhooks, and Python/n8n automations shipped asynchronously in 48h–96h. Fixed sprints from $149." />
   <link rel="canonical" href="https://lhphong09t2.github.io/flowbench/" />
   <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="FlowBench Lab" />
-  <meta property="og:title" content="FlowBench Lab — Async B2B SaaS Launch Films &amp; Demo Studio" />
-  <meta property="og:description" content="Turn static SaaS landing pages into high-converting 1080p60 launch films and real-UI product walkthroughs in 48h–96h. Founding Client rates from $149 + free 15s hook preview." />
+  <meta property="og:title" content="FlowBench Lab — Async B2B SaaS Launch Films &amp; Engineering Sprints" />
+  <meta property="og:description" content="1080p60 B2B SaaS launch films, real-UI walkthroughs, Chrome/Edge MV3 extensions, Stripe/Polar webhooks &amp; Python/n8n automations shipped async in 48h–96h from $149." />
   <meta property="og:url" content="https://lhphong09t2.github.io/flowbench/" />
   <meta property="og:image" content="https://lhphong09t2.github.io/flowbench/poster-1280x720.jpg" />
   <meta property="og:image:width" content="1280" />
   <meta property="og:image:height" content="720" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="FlowBench Lab — Async B2B SaaS Launch Films &amp; Demo Studio" />
-  <meta name="twitter:description" content="1080p60 B2B SaaS launch films &amp; real-UI walkthroughs shipped asynchronously in 48h–96h. Founding rates from $149." />
+  <meta name="twitter:title" content="FlowBench Lab — Async B2B SaaS Launch Films &amp; Engineering Sprints" />
+  <meta name="twitter:description" content="1080p60 B2B SaaS launch films, Chrome/Edge MV3 extensions &amp; Python/n8n automations shipped async in 48h–96h from $149." />
   <meta name="twitter:image" content="https://lhphong09t2.github.io/flowbench/poster-1280x720.jpg" />
 
   <script type="application/ld+json">
@@ -30,11 +30,11 @@
     "name": "FlowBench Lab",
     "url": "https://lhphong09t2.github.io/flowbench/",
     "image": "https://lhphong09t2.github.io/flowbench/poster-1280x720.jpg",
-    "description": "Async B2B SaaS product demo studio producing 1080p60 beat-synced launch films, real-interface product walkthroughs, and vertical launch cuts in 48 to 96 hours.",
+    "description": "Async B2B SaaS product demo and engineering studio shipping 1080p60 launch films, real-interface product walkthroughs, Chrome/Edge MV3 browser extensions, Stripe/Polar billing webhooks, and Python/n8n automations in 48 to 96 hours.",
     "priceRange": "$149 - $599",
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
-      "name": "Async B2B SaaS Video Sprints (Founding Client Rates)",
+      "name": "Async B2B SaaS Video & Engineering Sprints",
       "itemListElement": [
         {
           "@type": "Offer",
@@ -53,11 +53,37 @@
           "name": "Full Launch + Onboarding Suite (30s Film + 90s Walkthrough)",
           "price": "599",
           "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "name": "Fast Next.js, React, Node.js Feature or Bug Fix (48h)",
+          "price": "150",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "name": "Custom n8n, Python, Playwright & MCP Automation (48h)",
+          "price": "200",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "name": "Stripe / Polar Checkout, Subscriptions & Idempotent Webhooks (72h)",
+          "price": "250",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "name": "Chrome & Edge MV3 Browser Extension MVP + Store-Ready Pack (96h)",
+          "price": "399",
+          "priceCurrency": "USD"
         }
       ]
     },
     "sameAs": [
       "https://contra.com/phong_le_w9gsh5dm",
+      "https://www.upwork.com/freelancers/~01a4e45c044cace574",
+      "https://github.com/lhphong09t2",
       "https://www.youtube.com/@FlowBenchLab",
       "https://www.facebook.com/flowbenchlab"
     ]
@@ -376,6 +402,16 @@
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 20px;
+    }
+    .eng-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+    .card-actions-dual {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
     }
     .price-card {
       background: var(--surface);
@@ -810,7 +846,7 @@
     }
 
     @media (max-width: 980px) {
-      .pricing-grid, .steps-grid, .intake-grid {
+      .pricing-grid, .eng-grid, .steps-grid, .intake-grid, .card-actions-dual {
         grid-template-columns: 1fr;
       }
       .nav-hide-sm { display: none; }
@@ -830,45 +866,52 @@
           </g>
         </svg>
         <span>FlowBench Lab</span>
-        <span class="brand-pill">DEMO STUDIO</span>
+        <span class="brand-pill">DEMO &amp; DEV STUDIO</span>
       </a>
       <nav class="nav-actions" aria-label="Primary navigation">
         <a class="nav-link nav-hide-sm" href="#showreel">Showreel</a>
-        <a class="nav-link nav-hide-sm" href="#pricing">Scope &amp; Pricing</a>
+        <a class="nav-link nav-hide-sm" href="#pricing">Video Sprints</a>
+        <a class="nav-link nav-hide-sm" href="#engineering">Engineering Sprints</a>
         <a class="nav-link nav-hide-sm" href="#process">Async Process</a>
         <button id="theme-toggle" class="theme-btn" type="button" aria-label="Toggle Daylight / Studio Dark theme" title="Switch Daylight / Dark">
           <span id="theme-glyph" aria-hidden="true">&#9788;</span>
         </button>
-        <a class="btn btn-primary" href="#brief">Free 15s Hook Preview</a>
+        <a class="btn btn-primary" href="#brief">Free 15s Hook / Brief</a>
       </nav>
     </div>
   </header>
 
   <main class="container">
     <section class="hero">
-      <div class="eyebrow">Founding Client Rates from $149 (First 5 Contra Projects) &middot; Free 15s Hook Preview</div>
-      <h1>Real-UI B2B SaaS Launch Films &amp; Demos Shipped Async in 48h&ndash;96h.</h1>
+      <div class="eyebrow">Video Sprints ($149&ndash;$599) &amp; Engineering Sprints ($150&ndash;$399) &middot; Synced on Contra &amp; Upwork</div>
+      <h1>Real-UI B2B SaaS Launch Films &amp; Productized Engineering Shipped Async in 48h&ndash;96h.</h1>
       <p class="hero-sub">
-        We record your live product interface in crisp 1080p&mdash;never slide decks or mockups&mdash;and deliver ready-to-embed homepage, Product Hunt, and X/LinkedIn launch cuts with zero discovery calls.
+        We record your live product in crisp 1080p60&mdash;and ship production Next.js features, Chrome/Edge MV3 extensions, Stripe/Polar webhooks, and Python/n8n automations at fixed prices with zero discovery calls.
       </p>
       <div class="hero-ctas">
         <a class="btn btn-primary" href="#brief" data-select-tier="free-hook">Request Free 15s Hook Preview</a>
-        <a class="btn" href="https://contra.com/phong_le_w9gsh5dm" target="_blank" rel="noopener noreferrer">View Services on Contra &rarr;</a>
+        <a class="btn" href="https://contra.com/phong_le_w9gsh5dm" target="_blank" rel="noopener noreferrer">Book on Contra (0% Fee) &rarr;</a>
+        <a class="btn" href="https://www.upwork.com/freelancers/~01a4e45c044cace574" target="_blank" rel="noopener noreferrer">Order on Upwork &rarr;</a>
       </div>
-      <div class="hero-trust">Fixed transparent scope &middot; Structured revisions included (1&ndash;2 per tier) &middot; Shipped by builders of Chrome Web Store tools</div>
+      <div class="hero-trust">Fixed transparent scope &middot; Structured revisions included (1&ndash;2 per tier) &middot; Shipped by builders of Chrome Web Store &amp; Edge tools</div>
 
-      <div class="shipped-proof-row" aria-label="In-House Shipped Extensions Proof">
-        <span class="shipped-proof-label">&#10003; In-House Shipped Extensions Proof</span>
+      <div class="shipped-proof-row" aria-label="In-House Shipped Products Proof">
+        <span class="shipped-proof-label">&#10003; In-House Shipped Proof</span>
         <span class="shipped-ext-item">
           <span class="shipped-ext-name">Clipwell v1.1.1</span>
           <a class="store-mini-link" href="https://chromewebstore.google.com/detail/clipwell-%E2%80%94-clean-markdown/blkklmemnnfknlnjldhcklcpcipckmma" target="_blank" rel="noopener noreferrer">Chrome Web Store &#8599;</a>
-          <a class="store-mini-link" href="https://microsoftedge.microsoft.com/addons/detail/hjmafldhdphpjmkliibmalkfpceifbbp" target="_blank" rel="noopener noreferrer">Microsoft Edge Add-ons &#8599;</a>
+          <a class="store-mini-link" href="https://microsoftedge.microsoft.com/addons/detail/hjmafldhdphpjmkliibmalkfpceifbbp" target="_blank" rel="noopener noreferrer">Edge Add-ons &#8599;</a>
         </span>
         <span class="shipped-sep" aria-hidden="true">&middot;</span>
         <span class="shipped-ext-item">
           <span class="shipped-ext-name">SessionMD v1.1.1</span>
           <a class="store-mini-link" href="https://chromewebstore.google.com/detail/sessionmd-%E2%80%94-crash-safe-ta/iehkfahkfobkcpcfpkhjcnbabeiigaje" target="_blank" rel="noopener noreferrer">Chrome Web Store &#8599;</a>
-          <a class="store-mini-link" href="https://microsoftedge.microsoft.com/addons/detail/bkaeglckkmdkjkcdchcafogojcadamcm" target="_blank" rel="noopener noreferrer">Microsoft Edge Add-ons &#8599;</a>
+          <a class="store-mini-link" href="https://microsoftedge.microsoft.com/addons/detail/bkaeglckkmdkjkcdchcafogojcadamcm" target="_blank" rel="noopener noreferrer">Edge Add-ons &#8599;</a>
+        </span>
+        <span class="shipped-sep" aria-hidden="true">&middot;</span>
+        <span class="shipped-ext-item">
+          <span class="shipped-ext-name">Python 3.12 Web Lab</span>
+          <a class="store-mini-link" href="./python-lab/?lesson=01">Open Live Sandbox &#8599;</a>
         </span>
       </div>
 
@@ -1018,6 +1061,104 @@
       </div>
     </section>
 
+    <section id="engineering" class="section">
+      <div class="section-head">
+        <div class="section-kicker">Pillar 2 &middot; Productized Engineering &amp; Automation Sprints</div>
+        <h2>Shipped Code, Extensions &amp; Workflows. Fixed Price.</h2>
+        <p>Every sprint is scoped upfront with tested deliverables, clean documentation, and 1:1 pricing across Contra (0% commission) and Upwork Project Catalog.</p>
+      </div>
+
+      <div class="eng-grid">
+        <article class="price-card featured">
+          <span class="popular-tag">Browser Extensions &middot; 96h SLA</span>
+          <div class="tier-head">
+            <h3>Chrome &amp; Edge MV3 Extension MVP</h3>
+            <span class="price-stack"><span class="price-old">$599</span><span class="price-num">$399</span></span>
+          </div>
+          <div class="sla-line">96-hour async turnaround &middot; Shipped by creator of Clipwell &amp; SessionMD v1.1.1</div>
+          <ul class="spec-list">
+            <li>Manifest V3 popup, side panel, context-menu, or clean activeTab DOM content script</li>
+            <li>Deterministic service worker state, chrome.storage persistence &amp; optional Polar/Stripe license check</li>
+            <li>Cross-browser Chrome Web Store + Microsoft Edge Add-ons release ZIPs &amp; permission justification</li>
+            <li>2 structured revision rounds + store-ready 1280&times;800 screenshot pack</li>
+          </ul>
+          <div class="card-actions">
+            <div class="card-actions-dual">
+              <a class="btn btn-primary" href="https://contra.com/s/PYloloOB-chrome-and-edge-mv3-browser-extension-mvp-store-ready-pack-96h" target="_blank" rel="noopener noreferrer">Contra ($399) &rarr;</a>
+              <a class="btn" href="https://www.upwork.com/freelancers/~01a4e45c044cace574" target="_blank" rel="noopener noreferrer">Upwork ($399) &rarr;</a>
+            </div>
+            <a class="btn" href="#brief" data-select-tier="eng-extension-399">Scope Custom Extension Brief</a>
+          </div>
+        </article>
+
+        <article class="price-card">
+          <span class="popular-tag">AI &amp; Data Pipelines &middot; 48h SLA</span>
+          <div class="tier-head">
+            <h3>n8n, Python, Playwright &amp; MCP</h3>
+            <span class="price-stack"><span class="price-num">$200</span></span>
+          </div>
+          <div class="sla-line">48-hour async turnaround &middot; Eliminate manual CSV, PDF, Sheet &amp; API busywork</div>
+          <ul class="spec-list">
+            <li>Custom n8n / Make workflow, Python 3.12 PDF/table/CSV/Google Sheets cleaner, or Playwright scraper</li>
+            <li>Custom Claude / OpenAI Model Context Protocol (MCP) server tools with strict schema validation</li>
+            <li>Bounded retries, rate-limit backoff, structured error alerts &amp; portable JSON/Docker setup</li>
+            <li>1 structured revision round + recorded verification run</li>
+          </ul>
+          <div class="card-actions">
+            <div class="card-actions-dual">
+              <a class="btn btn-primary" href="https://contra.com/s/N6sXRX23-custom-n8n-python-playwright-sheets-and-mcp-automation-48h" target="_blank" rel="noopener noreferrer">Contra ($200) &rarr;</a>
+              <a class="btn" href="https://www.upwork.com/services/product/development-it-custom-n8n-make-playwright-or-claude-mcp-workflows-2122202833616520327" target="_blank" rel="noopener noreferrer">Upwork ($200) &rarr;</a>
+            </div>
+            <a class="btn" href="#brief" data-select-tier="eng-automation-200">Scope Automation Brief</a>
+          </div>
+        </article>
+
+        <article class="price-card">
+          <span class="popular-tag">Revenue Infrastructure &middot; 72h SLA</span>
+          <div class="tier-head">
+            <h3>Stripe / Polar Billing &amp; Webhooks</h3>
+            <span class="price-stack"><span class="price-num">$250</span></span>
+          </div>
+          <div class="sla-line">72-hour async turnaround &middot; Zero double-charges, race conditions, or missed events</div>
+          <ul class="spec-list">
+            <li>Stripe or Polar.sh Checkout, subscription tier upgrades/cancellations &amp; customer portal wiring</li>
+            <li>Raw-buffer HMAC-SHA256 signature verification + idempotent webhook event state machine</li>
+            <li>Automated integration test suite covering replay, out-of-order, and failed payment edge cases</li>
+            <li>1 structured revision round + clean deployment checklist</li>
+          </ul>
+          <div class="card-actions">
+            <div class="card-actions-dual">
+              <a class="btn btn-primary" href="https://contra.com/s/7bmolUqE-stripepolar-checkout-subscriptions-and-idempotent-webhooks-72h" target="_blank" rel="noopener noreferrer">Contra ($250) &rarr;</a>
+              <a class="btn" href="https://www.upwork.com/services/product/development-it-stripe-checkout-subscriptions-and-reliable-node-webhooks-2122200993364218397" target="_blank" rel="noopener noreferrer">Upwork ($250) &rarr;</a>
+            </div>
+            <a class="btn" href="#brief" data-select-tier="eng-billing-250">Scope Billing Brief</a>
+          </div>
+        </article>
+
+        <article class="price-card">
+          <span class="popular-tag">Fastest Code Ship &middot; 48h SLA</span>
+          <div class="tier-head">
+            <h3>Next.js, React &amp; Node.js Sprint</h3>
+            <span class="price-stack"><span class="price-num">$150</span></span>
+          </div>
+          <div class="sla-line">48-hour async turnaround &middot; Scoped feature, interactive web tool, or production bug fix</div>
+          <ul class="spec-list">
+            <li>Clean TypeScript / Next.js / React UI component, REST API endpoint, or root-cause bug fix</li>
+            <li>Interactive calculators, client-side tools, or responsive landing page upgrades (CWV-clean)</li>
+            <li>Pull request with focused diff, regression test coverage &amp; before/after verification notes</li>
+            <li>1 structured revision round included</li>
+          </ul>
+          <div class="card-actions">
+            <div class="card-actions-dual">
+              <a class="btn btn-primary" href="https://contra.com/s/YLsUYbFr-fast-nextjs-react-node-feature-bug-fix-or-web-tool-48h" target="_blank" rel="noopener noreferrer">Contra ($150) &rarr;</a>
+              <a class="btn" href="https://www.upwork.com/services/product/development-it-fast-next-js-react-or-node-js-bug-fixes-and-new-features-2122198281289503261" target="_blank" rel="noopener noreferrer">Upwork ($150) &rarr;</a>
+            </div>
+            <a class="btn" href="#brief" data-select-tier="eng-web-150">Scope Feature / Fix Brief</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
     <section id="process" class="section">
       <div class="section-head">
         <div class="section-kicker">Zero-Meeting Workflow</div>
@@ -1046,43 +1187,53 @@
     <section id="brief" class="section">
       <div class="section-head">
         <div class="section-kicker">2-Minute Async Intake</div>
-        <h2>Generate Your Project Brief or Free 15s Hook Request</h2>
-        <p>Fill out 4 quick fields, then copy your formatted brief in 1 click to message on Contra or open directly in your email client.</p>
+        <h2>Generate Your Video or Engineering Sprint Brief</h2>
+        <p>Fill out 4 quick fields, then copy your formatted brief in 1 click to message on Contra, order on Upwork, or open directly in your email client.</p>
       </div>
 
       <div class="intake-grid">
         <form id="brief-form" class="form-card" onsubmit="return false;">
           <div class="field">
-            <label for="f-url">Product / Landing Page URL</label>
+            <label for="f-url">Product / Repo / Landing Page URL</label>
             <input id="f-url" type="url" placeholder="https://yourproduct.com" value="" />
           </div>
           <div class="field">
-            <label for="f-tier">Selected Option</label>
+            <label for="f-tier">Selected Sprint</label>
             <select id="f-tier">
-              <option data-tier-key="free-hook" value="Free 15s Hook Preview (1 per qualified SaaS team)">Free 15s Hook Preview (1 per qualified SaaS team)</option>
-              <option data-tier-key="launch-149" value="$149 Launch Film — Founding Rate, list $299 (30s 60fps · 48h · 1 revision)">$149 Launch Film &mdash; Founding Rate, list $299 (30s 60fps &middot; 48h &middot; 1 revision)</option>
-              <option data-tier-key="walkthrough-299" value="$299 Product Walkthrough — Founding Rate, list $500 (60–75s · 72h · 2 revisions)">$299 Product Walkthrough &mdash; Founding Rate, list $500 (60&ndash;75s &middot; 72h &middot; 2 revisions)</option>
-              <option data-tier-key="suite-599" value="$599 Full Launch + Onboarding Suite — Founding Rate, list $1,000 (30s + 90s · 96h · 2 revisions)">$599 Full Launch + Onboarding Suite &mdash; Founding Rate, list $1,000 (30s + 90s &middot; 96h &middot; 2 revisions)</option>
+              <optgroup label="Video &amp; Launch Sprints">
+                <option data-tier-key="free-hook" value="Free 15s Hook Preview (1 per qualified SaaS team)">Free 15s Hook Preview (1 per qualified SaaS team)</option>
+                <option data-tier-key="launch-149" value="$149 Launch Film — Founding Rate, list $299 (30s 60fps · 48h · 1 revision)">$149 Launch Film &mdash; Founding Rate, list $299 (30s 60fps &middot; 48h &middot; 1 revision)</option>
+                <option data-tier-key="walkthrough-299" value="$299 Product Walkthrough — Founding Rate, list $500 (60–75s · 72h · 2 revisions)">$299 Product Walkthrough &mdash; Founding Rate, list $500 (60&ndash;75s &middot; 72h &middot; 2 revisions)</option>
+                <option data-tier-key="suite-599" value="$599 Full Launch + Onboarding Suite — Founding Rate, list $1,000 (30s + 90s · 96h · 2 revisions)">$599 Full Launch + Onboarding Suite &mdash; Founding Rate, list $1,000 (30s + 90s &middot; 96h &middot; 2 revisions)</option>
+              </optgroup>
+              <optgroup label="Engineering &amp; Automation Sprints">
+                <option data-tier-key="eng-extension-399" value="$399 Chrome &amp; Edge MV3 Browser Extension MVP (96h · 2 revisions)">$399 Chrome &amp; Edge MV3 Browser Extension MVP (96h &middot; 2 revisions)</option>
+                <option data-tier-key="eng-automation-200" value="$200 Custom n8n, Python, Playwright &amp; MCP Automation (48h · 1 revision)">$200 Custom n8n, Python, Playwright &amp; MCP Automation (48h &middot; 1 revision)</option>
+                <option data-tier-key="eng-billing-250" value="$250 Stripe / Polar Checkout, Subscriptions &amp; Idempotent Webhooks (72h · 1 revision)">$250 Stripe / Polar Checkout, Subscriptions &amp; Idempotent Webhooks (72h &middot; 1 revision)</option>
+                <option data-tier-key="eng-web-150" value="$150 Fast Next.js, React, Node.js Feature or Bug Fix (48h · 1 revision)">$150 Fast Next.js, React, Node.js Feature or Bug Fix (48h &middot; 1 revision)</option>
+              </optgroup>
             </select>
           </div>
           <div class="field">
-            <label for="f-placement">Primary Launch Surface</label>
+            <label for="f-placement">Primary Goal / Surface</label>
             <select id="f-placement">
               <option value="Homepage Hero + Product Hunt / X Launch">Homepage Hero + Product Hunt / X Launch</option>
               <option value="Homepage Above-the-Fold Walkthrough">Homepage Above-the-Fold Walkthrough</option>
-              <option value="Docs, Changelog & Customer Onboarding">Docs, Changelog &amp; Customer Onboarding</option>
+              <option value="Chrome / Edge MV3 Extension or Internal Automation">Chrome / Edge MV3 Extension or Internal Automation</option>
+              <option value="Production SaaS Feature, Bug Fix, or Stripe/Polar Billing">Production SaaS Feature, Bug Fix, or Stripe/Polar Billing</option>
+              <option value="Docs, Changelog &amp; Customer Onboarding">Docs, Changelog &amp; Customer Onboarding</option>
             </select>
           </div>
           <div class="field">
-            <label for="f-aha">Single Core &ldquo;Aha&rdquo; Workflow (1&ndash;2 sentences)</label>
-            <textarea id="f-aha" placeholder="e.g. Connect a GitHub repo -> trigger automated PR review -> export clean compliance report in 1 click."></textarea>
+            <label for="f-aha">Core Workflow or Deliverable Scope (1&ndash;2 sentences)</label>
+            <textarea id="f-aha" placeholder="e.g. Record 60s onboarding walkthrough OR build MV3 popup that exports selected tables to Google Sheets."></textarea>
           </div>
           <div class="field" style="margin-bottom:0">
-            <label for="f-access">Demo Access Mode</label>
+            <label for="f-access">Access / Repo Mode</label>
             <select id="f-access">
               <option value="Public live product / interactive sandbox">Public live product / interactive sandbox</option>
-              <option value="Read-only staging account (shared after confirmation)">Read-only staging account (shared after confirmation)</option>
-              <option value="2-minute raw founder Loom + live UI">2-minute raw founder Loom + live UI</option>
+              <option value="GitHub repo / staging access (shared after confirmation)">GitHub repo / staging access (shared after confirmation)</option>
+              <option value="2-minute raw founder Loom + written spec">2-minute raw founder Loom + written spec</option>
             </select>
           </div>
         </form>
@@ -1096,6 +1247,7 @@
           <div class="intake-btns">
             <button id="btn-copy-brief" class="btn btn-primary" type="button">Copy Async Brief</button>
             <a class="btn" href="https://contra.com/phong_le_w9gsh5dm" target="_blank" rel="noopener noreferrer">Send via Contra &rarr;</a>
+            <a class="btn" href="https://www.upwork.com/freelancers/~01a4e45c044cace574" target="_blank" rel="noopener noreferrer">Order on Upwork &rarr;</a>
             <button id="btn-mailto-brief" class="btn" type="button">Open in Email App</button>
           </div>
           <div id="copy-feedback" class="copy-feedback" role="status" aria-live="polite"></div>
@@ -1106,11 +1258,13 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <div>&copy; 2026 FlowBench Lab &middot; Async B2B SaaS Product Demo Studio</div>
+      <div>&copy; 2026 FlowBench Lab &middot; Async B2B SaaS Launch Films &amp; Engineering Studio</div>
       <div class="footer-links">
         <a href="https://contra.com/phong_le_w9gsh5dm" target="_blank" rel="noopener noreferrer">Contra Storefront</a>
+        <a href="https://www.upwork.com/freelancers/~01a4e45c044cace574" target="_blank" rel="noopener noreferrer">Upwork Profile</a>
         <a href="https://lhphong09t2.github.io/clipwell/" target="_blank" rel="noopener noreferrer">Clipwell Extension</a>
         <a href="https://lhphong09t2.github.io/sessionmd/" target="_blank" rel="noopener noreferrer">SessionMD Extension</a>
+        <a href="./python-lab/?lesson=01">Python 3.12 Web Lab</a>
         <a href="https://www.youtube.com/@FlowBenchLab" target="_blank" rel="noopener noreferrer">YouTube</a>
       </div>
     </div>
