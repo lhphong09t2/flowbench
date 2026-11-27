@@ -137,8 +137,16 @@ html, body {
 .btn-run {
   background: var(--accent);
   color: #042f2e;
+  transition: transform 110ms ease, background-color 140ms ease, box-shadow 180ms ease;
 }
 .btn-run:hover { background: var(--accent-hover); color: #ffffff; }
+.btn-run:active,
+.btn-run.is-pressing {
+  transform: scale(0.96);
+  background: #34d399;
+  color: #042f2e;
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.28);
+}
 .btn-stop {
   background: rgba(239, 68, 68, 0.16);
   color: #fca5a5;
@@ -183,17 +191,65 @@ html, body {
   color: var(--text);
   font-weight: 700;
 }
+.editor-shell {
+  position: relative;
+  flex: 1;
+  display: flex;
+  min-height: 360px;
+  background: #090e1a;
+  overflow: hidden;
+}
+.gutter-clip {
+  position: relative;
+  width: 48px;
+  flex-shrink: 0;
+  overflow: hidden;
+  background: rgba(15, 23, 42, 0.55);
+  border-right: 1px solid var(--border);
+  pointer-events: none;
+  z-index: 2;
+}
+.line-gutter {
+  padding: 18px 10px 18px 0;
+  text-align: right;
+  font-family: var(--mono);
+  font-size: 15px;
+  line-height: 30px;
+  color: #475569;
+  user-select: none;
+  pointer-events: none;
+  white-space: pre;
+  will-change: transform;
+}
+.active-line-bar {
+  position: absolute;
+  left: 48px;
+  right: 0;
+  top: 18px;
+  height: 30px;
+  background: rgba(56, 189, 248, 0.10);
+  border-left: 2px solid rgba(56, 189, 248, 0.78);
+  pointer-events: none;
+  z-index: 1;
+  will-change: transform;
+}
 #code-editor {
+  position: relative;
+  z-index: 2;
   flex: 1;
   width: 100%;
   min-height: 360px;
-  background: #090e1a;
+  background: transparent;
   color: #e2e8f0;
+  caret-color: #38bdf8;
   border: 0;
   padding: 18px 20px;
   font-family: var(--mono);
   font-size: 19px;
-  line-height: 1.58;
+  line-height: 30px;
+  white-space: pre;
+  overflow-x: auto;
+  overflow-y: auto;
   resize: none;
   outline: none;
   tab-size: 4;
@@ -216,6 +272,14 @@ html, body {
   resize: vertical;
   outline: none;
 }
+#exec-timing.is-ok {
+  color: #34d399;
+  font-weight: 700;
+}
+#exec-timing.is-err {
+  color: #f87171;
+  font-weight: 700;
+}
 #output-console {
   flex: 1;
   min-height: 220px;
@@ -223,15 +287,24 @@ html, body {
   padding: 16px 18px;
   background: #060a12;
   color: #ecfdf5;
+  border-left: 3px solid transparent;
   font-family: var(--mono);
   font-size: 18.5px;
   line-height: 1.55;
   white-space: pre-wrap;
   word-break: break-word;
   overflow-y: auto;
+  transition: border-color 200ms ease, background-color 220ms ease, box-shadow 260ms ease;
+}
+#output-console.flash-ok {
+  border-left-color: var(--accent);
+  background: rgba(16, 185, 129, 0.07);
+  box-shadow: inset 0 0 18px rgba(16, 185, 129, 0.14);
 }
 #output-console.has-error {
   color: #fecaca;
+  border-left-color: var(--danger);
+  background: rgba(239, 68, 68, 0.06);
 }
 .guide-card {
   padding: 13px 16px;
@@ -366,11 +439,23 @@ body.portrait-9x16 .workspace {
   min-height: auto;
 }
 body.portrait-9x16 .right-col { gap: 8px; }
+body.portrait-9x16 .editor-shell { min-height: 316px; }
+body.portrait-9x16 .gutter-clip { width: 40px; }
+body.portrait-9x16 .line-gutter {
+  padding: 10px 8px 10px 0;
+  font-size: 13.5px;
+  line-height: 26px;
+}
+body.portrait-9x16 .active-line-bar {
+  left: 40px;
+  top: 10px;
+  height: 26px;
+}
 body.portrait-9x16 #code-editor {
   min-height: 316px;
   padding: 10px 14px;
   font-size: 17px;
-  line-height: 1.48;
+  line-height: 26px;
 }
 body.portrait-9x16 #stdin-box {
   height: 76px;

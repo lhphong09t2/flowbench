@@ -67,7 +67,13 @@
         <span class="pane-title" id="editor-filename">lesson_01.py</span>
         <span>Python 3.12 Standard Library</span>
       </div>
-      <textarea id="code-editor" spellcheck="false" aria-label="Python code editor"></textarea>
+      <div class="editor-shell">
+        <div id="active-line-bar" class="active-line-bar" aria-hidden="true"></div>
+        <div class="gutter-clip" aria-hidden="true">
+          <div id="line-gutter" class="line-gutter">1</div>
+        </div>
+        <textarea id="code-editor" wrap="off" spellcheck="false" aria-label="Python code editor"></textarea>
+      </div>
     </section>
 
     <div class="right-col">

@@ -10,6 +10,8 @@
   const pickerEl = document.getElementById("lesson-picker");
   const stageTabsEl = document.getElementById("stage-tabs");
   const editorEl = document.getElementById("code-editor");
+  const gutterEl = document.getElementById("line-gutter");
+  const activeLineEl = document.getElementById("active-line-bar");
   const stdinEl = document.getElementById("stdin-box");
   const outputEl = document.getElementById("output-console");
   const timingEl = document.getElementById("exec-timing");
@@ -59,6 +61,33 @@
   let currentStageIdx = 0;
   let activeSampleStdin = "";
   let copyFlashTimer = null;
+  let consoleFlashTimer = null;
+  let runPressTimer = null;
+
+  function syncEditorChrome() {
+    if (!editorEl) return;
+    const val = String(editorEl.value || "");
+    const lineCount = Math.max(1, val.split("\n").length);
+    if (gutterEl) {
+      const nums = [];
+      for (let i = 1; i <= lineCount; i += 1) nums.push(String(i));
+      gutterEl.textContent = nums.join("\n");
+    }
+    const selPos = typeof editorEl.selectionStart === "number" ? editorEl.selectionStart : val.length;
+    const activeIdx = Math.max(0, val.slice(0, selPos).split("\n").length - 1);
+    let lineH = document.body && document.body.classList && document.body.classList.contains("portrait-9x16") ? 26 : 30;
+    if (typeof window.getComputedStyle === "function") {
+      const parsedLh = parseFloat(window.getComputedStyle(editorEl).lineHeight);
+      if (parsedLh > 0) lineH = parsedLh;
+    }
+    const scrollY = typeof editorEl.scrollTop === "number" ? editorEl.scrollTop : 0;
+    if (gutterEl && gutterEl.style) {
+      gutterEl.style.transform = "translateY(" + (-scrollY) + "px)";
+    }
+    if (activeLineEl && activeLineEl.style) {
+      activeLineEl.style.transform = "translateY(" + (activeIdx * lineH - scrollY) + "px)";
+    }
+  }
 
   function normalizeLessonKey(raw) {
     const s = String(raw || "").trim();
@@ -84,13 +113,25 @@
       }
       if (d.type === "result") {
         if (Number(d.runId) !== runSeq) return;
-        timingEl.textContent = String(d.elapsedMs || 0) + " ms";
+        const elapsedStr = String(d.elapsedMs || 0) + " ms";
         const outTxt = String(d.stdout || "");
         const errTxt = String(d.stderr || "");
         if (d.ok) {
+          timingEl.classList.remove("is-err");
+          timingEl.classList.add("is-ok");
+          timingEl.textContent = "\u2713 " + elapsedStr;
           outputEl.classList.remove("has-error");
+          outputEl.classList.add("flash-ok");
+          if (consoleFlashTimer) clearTimeout(consoleFlashTimer);
+          consoleFlashTimer = setTimeout(() => {
+            outputEl.classList.remove("flash-ok");
+          }, 420);
           outputEl.textContent = outTxt || "(Program finished with zero printed output)";
         } else {
+          timingEl.classList.remove("is-ok");
+          timingEl.classList.add("is-err");
+          timingEl.textContent = "\u2715 " + elapsedStr;
+          outputEl.classList.remove("flash-ok");
           outputEl.classList.add("has-error");
           outputEl.textContent = (outTxt ? outTxt + "\n\n" : "") + errTxt;
         }
@@ -192,10 +233,13 @@
     const st = stages[idx];
     filenameEl.textContent = "lesson_" + lessonKey + ".py";
     editorEl.value = st.code;
+    if (typeof editorEl.scrollTop === "number") editorEl.scrollTop = 0;
     stdinEl.value = st.stdin || "";
+    timingEl.classList.remove("is-ok", "is-err");
     timingEl.textContent = "0 ms";
-    outputEl.classList.remove("has-error");
+    outputEl.classList.remove("has-error", "flash-ok");
     outputEl.textContent = 'Ready. Click "Run Python" (or press Ctrl+Enter) to execute.';
+    syncEditorChrome();
 
     stageTabsEl.textContent = "";
     stages.forEach((item, i) => {
@@ -236,7 +280,13 @@
   function runCurrentCode() {
     if (!worker) spawnWorker();
     runSeq += 1;
-    outputEl.classList.remove("has-error");
+    runBtn.classList.add("is-pressing");
+    if (runPressTimer) clearTimeout(runPressTimer);
+    runPressTimer = setTimeout(() => {
+      runBtn.classList.remove("is-pressing");
+    }, 160);
+    timingEl.classList.remove("is-ok", "is-err");
+    outputEl.classList.remove("has-error", "flash-ok");
     outputEl.textContent = "Running Python 3.12...";
     worker.postMessage({
       type: "run",
@@ -247,6 +297,9 @@
   }
 
   runBtn.addEventListener("click", runCurrentCode);
+  ["input", "scroll", "click", "keyup", "focus"].forEach((evName) => {
+    editorEl.addEventListener(evName, syncEditorChrome);
+  });
   editorEl.addEventListener("keydown", (e) => {
     if ((e.ctrlKey || e.metaKey) && e.key === "Enter") {
       e.preventDefault();
