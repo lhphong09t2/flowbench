@@ -12,15 +12,36 @@
 <body>
   <header class="topbar">
     <div class="brand-group">
-      <a class="brand-pill" href="../">FlowBench Python Lab</a>
+      <a class="brand-pill" href="https://www.youtube.com/playlist?list=PLChvkbodupV0" target="_blank" rel="noopener noreferrer" title="Open Full Python Course Playlist on YouTube">FlowBench Python Lab</a>
       <label for="lesson-picker" class="lesson-label">Lesson:</label>
       <select id="lesson-picker" class="lesson-select" aria-label="Select Python course lesson"></select>
     </div>
     <div class="topbar-right">
+      <button id="toggle-docs-btn" class="btn btn-secondary" type="button">Python Docs &amp; Sample Data</button>
       <button id="toggle-vscode-btn" class="btn btn-secondary" type="button">Local VS Code Setup (3 Steps)</button>
       <span id="runtime-status" class="runtime-pill">Initializing Python 3.12...</span>
     </div>
   </header>
+
+  <section id="docs-drawer" class="docs-drawer" aria-label="Python 3 Quick Docs and Sample Input">
+    <div class="docs-grid">
+      <article id="docs-ref-card" class="docs-card">
+        <div class="docs-card-header">
+          <strong id="docs-ref-title">Official Python 3 Quick Docs</strong>
+          <span class="docs-badge">docs.python.org/3</span>
+        </div>
+        <ul id="docs-ref-list" class="docs-list"></ul>
+      </article>
+      <article id="sample-data-card" class="docs-card">
+        <div class="docs-card-header">
+          <strong id="sample-data-title">Raw Sample Input / Receipt</strong>
+          <button id="copy-sample-stdin-btn" class="btn btn-secondary btn-sample" type="button">Load into Test Inputs</button>
+        </div>
+        <p id="sample-data-caption" class="sample-caption"></p>
+        <pre id="sample-data-preview" class="sample-preview"></pre>
+      </article>
+    </div>
+  </section>
 
   <section id="vscode-drawer" class="setup-drawer" aria-label="Local VS Code Setup">
     <strong>Prefer coding locally on your computer? (Takes 2 minutes):</strong>

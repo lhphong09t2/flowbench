@@ -9,12 +9,36 @@ window.FLOWBENCH_LESSONS = Object.freeze({
     "quizPrompt": "Pause for 3 seconds: what does Python print when you evaluate '25' * 3 versus int('25') * 3?",
     "exercise": "Build a Freelance Hourly & Tax Estimator that reads hours worked and hourly rate via input(), deducts 15% tax, and prints gross pay, tax reserved, and net take-home to two decimals.",
     "expectedStdout": "total=$150.45|each=$37.61|dollars=37|rem=1|pow=8",
+    "docsRef": [
+      {
+        "sig": "input(prompt) -> str",
+        "note": "Always returns text — wrap in int() or float() for math."
+      },
+      {
+        "sig": "type(obj) -> class badge",
+        "note": "Inspects runtime data type (<class 'str'>, <class 'int'>, <class 'float'>, <class 'bool'>)."
+      },
+      {
+        "sig": "x // y (floor division) & x % y (modulo remainder)",
+        "note": "Splits whole units (hours/dollars) from leftover remainder."
+      },
+      {
+        "sig": "f\"{val:.2f}\" (2-decimal currency formatting)",
+        "note": "Rounds and pads float/Decimal numbers to two exact decimal places."
+      }
+    ],
+    "sampleSource": {
+      "title": "Table 7 Bistro Receipt (Raw Input)",
+      "caption": "3 lines consumed in order by input(): dinner bill ($), tip percent (%), and diners.",
+      "rawDisplay": "Receipt #T7 — Bistro Dinner\nDinner bill ($) : 127.50\nTip percent (%) : 18\nNumber of people: 4",
+      "stdin": "127.50\n18\n4\n"
+    },
     "stages": [
       {
         "id": "s1_vars",
         "label": "Stage 1: Variables & Types",
         "stdin": "",
-        "code": "# Lesson 01 — Stage 1: Labeled Variables & the 4 Core Data Types\ndinner_bill = 127.50       # float  (decimal number)\ntip_percent = 18           # int    (whole number)\ndiners = 4                 # int    (headcount)\ntable_label = 'Table 7'    # str    (text in quotes)\nsplit_evenly = True        # bool   (True or False)\n\nprint('Label:', table_label, '->', type(table_label).__name__)\nprint('Bill :', dinner_bill, '->', type(dinner_bill).__name__)\nprint('Diners:', diners, '->', type(diners).__name__)\nprint('Split?:', split_evenly, '->', type(split_evenly).__name__)\n"
+        "code": "# Lesson 01 — Stage 1: Labeled Variables & the 4 Core Data Types\ndinner_bill = 127.50       # float  (decimal number)\ntip_percent = 18           # int    (whole number)\ndiners = 4                 # int    (headcount)\ntable_label = 'Table 7'    # str    (text in quotes)\nsplit_evenly = True        # bool   (True or False)\n\nprint('Label:', table_label, '->', type(table_label))\nprint('Bill :', dinner_bill, '->', type(dinner_bill))\nprint('Diners:', diners, '->', type(diners))\nprint('Split?:', split_evenly, '->', type(split_evenly))\n"
       },
       {
         "id": "s2_input_trap",
